@@ -1,5 +1,5 @@
 # todo-task-python
-    This program is used a a to do list , or task storage.
+    This program is used as a to do list , or task storage.
 
 
 # Usage:
