@@ -1,6 +1,50 @@
 #include <stdio.h>
 #include <string.h>
+void help();
 
+int main(int argc, char *argv[])
+{
+    if(argc > 1)
+    {
+        if(strcmp(argv[1], "add") == 0)                                                      //ADD
+        {
+			return 0;
+        }
+        else if(strcmp(argv[1], "ls") == 0)                                                  //LIST
+        {
+			return 0;
+        }
+        else if(strcmp(argv[1], "del") == 0)                                                 //DELETE
+        {
+			return 0;
+        }
+        else if(strcmp(argv[1], "done") == 0)                                                //DONE
+        {
+			return 0;
+        }
+        else if(strcmp(argv[1], "help") == 0)                                                //HELP
+        {
+            help();
+			return 0;
+        }
+        else if(strcmp(argv[1], "report") == 0)                                              //REPORT
+        {
+			return 0;
+        }
+        
+        else                                                                      //DEFAULT HELP
+        {
+            help();
+			return 0;
+        }
+
+    }
+    else                                                                          //DEFAULT
+    {
+        help();
+		return 0;
+    }
+}
 void help()
 {
     printf("Usage :-\n");
@@ -10,48 +54,4 @@ void help()
     printf("$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n");
     printf("$ ./task help                 # Show usage\n");
     printf("$ ./task report               # Statistics\n");
-}
-
-int main(int argc, char *argv[])
-{
-    if(argc > 1)
-    {
-        if(strcmp(argv[1], "add") == 0)                                                      //ADD
-        {
-            return 0;
-        }
-        else if(strcmp(argv[1], "ls") == 0)                                                  //LIST
-        {
-            return 0;
-        }
-        else if(strcmp(argv[1], "del") == 0)                                                 //DELETE
-        {
-            return 0;
-        }
-        else if(strcmp(argv[1], "done") == 0)                                                //DONE
-        {
-            return 0;
-        }
-        else if(strcmp(argv[1], "help") == 0)                                                //HELP
-        {
-            help();
-            return 0;
-        }
-        else if(strcmp(argv[1], "report") == 0)                                              //REPORT
-        {
-            return 0;
-        }
-        
-        else                                                                      //DEFAULT HELP
-        {
-            help();
-            return 0;
-        }
-
-    }
-    else                                                                          //DEFAULT
-    {
-        help();
-        return 0;
-    }
 }
