@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+void help();
 
 int main(int argc, char *argv[])
 {
@@ -24,13 +25,7 @@ int main(int argc, char *argv[])
         }
         else if(strcmp(argv[1], "help") == 0)                                                //HELP
         {
-            cout << "Usage :-\n";
-            cout << "$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n";
-            cout << "$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n";
-            cout << "$ ./task del INDEX            # Delete the incomplete item with the given index\n";
-            cout << "$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n";
-            cout << "$ ./task help                 # Show usage\n";
-            cout << "$ ./task report               # Statistics\n";
+            help();
             return 0;
         }
         else if(strcmp(argv[1], "report") == 0)                                              //REPORT
@@ -40,26 +35,25 @@ int main(int argc, char *argv[])
         
         else                                                                      //DEFAULT HELP
         {
-            cout << "Usage :-\n";
-            cout << "$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n";
-            cout << "$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n";
-            cout << "$ ./task del INDEX            # Delete the incomplete item with the given index\n";
-            cout << "$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n";
-            cout << "$ ./task help                 # Show usage\n";
-            cout << "$ ./task report               # Statistics\n";
+            help();
             return 0;
         }
 
     }
     else                                                                          //DEFAULT
     {
-        cout << "Usage :-\n";
-        cout << "$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n";
-        cout << "$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n";
-        cout << "$ ./task del INDEX            # Delete the incomplete item with the given index\n";
-        cout << "$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n";
-        cout << "$ ./task help                 # Show usage\n";
-        cout << "$ ./task report               # Statistics\n";
+        help();
         return 0;
     }
+}
+
+void help()
+{
+    cout << "Usage :-\n";
+    cout << "$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n";
+    cout << "$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n";
+    cout << "$ ./task del INDEX            # Delete the incomplete item with the given index\n";
+    cout << "$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n";
+    cout << "$ ./task help                 # Show usage\n";
+    cout << "$ ./task report               # Statistics\n";
 }
