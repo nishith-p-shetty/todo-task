@@ -136,10 +136,15 @@ if(len(sys.argv) > 1):
             print("Error: Missing NUMBER for marking tasks as done.")
     
     elif(sys.argv[1] == "help"):                                          #HELP
-        help()
+        sys.stdout.buffer.write(("Usage :-\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task del INDEX            # Delete the incomplete item with the given index\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task help                 # Show usage\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task report               # Statistics\n").encode('utf8'))
     
     elif(sys.argv[1] == "report"):                                        #REPORT
-        
         tskf = open("task.txt", "r")
         tlno = 0
         for line in tskf:
@@ -174,12 +179,15 @@ if(len(sys.argv) > 1):
         comf.close()
 
     else:                                                                 #DEFAULT HELP
-        help()
+        sys.stdout.buffer.write(("Usage :-\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task del INDEX            # Delete the incomplete item with the given index\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task done INDEX           # Mark the incomplete item with the given index as complete\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task help                 # Show usage\n").encode('utf8'))
+        sys.stdout.buffer.write(("$ ./task report               # Statistics\n").encode('utf8'))
 
 else:                                                                     #DEFAULT
-    help()
-
-def help():
     sys.stdout.buffer.write(("Usage :-\n").encode('utf8'))
     sys.stdout.buffer.write(("$ ./task add 2 hello world    # Add a new item with priority 2 and text \"hello world\" to the list\n").encode('utf8'))
     sys.stdout.buffer.write(("$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order\n").encode('utf8'))
